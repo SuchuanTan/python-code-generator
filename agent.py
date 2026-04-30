@@ -1,10 +1,14 @@
+import os
 import configparser
 from openai import OpenAI
 
 
 def load_llm_config(path="config.ini"):
+    base_dir = os.path.dirname(os.path.abspath(__file__))
+    full_path = os.path.join(base_dir, path)
+
     parser = configparser.ConfigParser()
-    parser.read(path, encoding="utf-8")
+    parser.read(full_path, encoding="utf-8")
 
     if "llm" not in parser:
         raise ValueError("The [llm] configuration section is missing from config.ini.")
