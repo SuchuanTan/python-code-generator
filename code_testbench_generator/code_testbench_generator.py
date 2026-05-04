@@ -44,7 +44,7 @@ def generate_with_retry(
     requirement: str,
     tla_spec: str,
     max_attempts: int = 3,
-    prompt_path: str = "prompt.txt"
+    prompt_path: str = "code_testbench_generator/prompt.txt"
 ) -> GenerationResult:
     system_prompt = load_prompt(prompt_path)
     agent = Agent(system_prompt=system_prompt)

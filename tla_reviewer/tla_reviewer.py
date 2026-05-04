@@ -27,11 +27,10 @@ def build_input(requirement: str, tla_spec: str) -> str:
 
 
 def validate_tla(
-    requirement: str,
-    tla_spec: str,
-    prompt_path: str = "prompt.txt"
+        requirement: str,
+        tla_spec: str,
+        prompt_path: str = "tla_reviewer/prompt.txt"
 ) -> TLAValidationResult:
-
     system_prompt = load_prompt(prompt_path)
     agent = Agent(system_prompt=system_prompt)
 
